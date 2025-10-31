@@ -25,9 +25,9 @@
   set text(font: ("Noto Serif", "Noto Serif CJK SC"))
   // 更改字体大小：
   set text(size: 11pt)
-  // 设置列表缩进
-  set list(indent: 12pt, body-indent: 6pt)
-  set enum(indent: 12pt, body-indent: 6pt)
+  // 设置列表样式（更靠左、圆点更大）
+  set list(indent: 8pt, body-indent: 4pt, marker: text(size: 1.6em)[•])
+  set enum(indent: 8pt, body-indent: 4pt)
   // 设置行间距
   set par(leading: 0.8em)
 
