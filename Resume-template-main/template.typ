@@ -24,12 +24,12 @@
   // 更换字体：
   set text(font: ("Noto Serif", "Noto Serif CJK SC"))
   // 更改字体大小：
-  set text(size: 11pt)
+  set text(size: 10pt)
   // 设置列表样式（更靠左、圆点更大）
-  set list(indent: 8pt, body-indent: 4pt, marker: text(size: 1.6em)[•])
-  set enum(indent: 8pt, body-indent: 4pt)
+  set list(indent: 6pt, body-indent: 8pt, marker: text(size: 1.8em)[•])
+  set enum(indent: 6pt, body-indent: 8pt)
   // 设置行间距
-  set par(leading: 0.8em)
+  set par(leading: 0.5em)
 
   body
 }
@@ -53,7 +53,7 @@
   email: "",
   github: "",
 ) = {
-  set box(baseline: 2pt)
+  set box(baseline: 1.5pt)
 
   set document(title: name)
 
@@ -61,8 +61,8 @@
 
   if phone.len() != 0 {
     box(
-      height: 11pt,
-      width: 14pt,
+      height: 10pt,
+      width: 13pt,
       image(bytes(phone_icon)),
     )
     phone
