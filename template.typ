@@ -10,10 +10,10 @@
   set page(
     paper: "a4",
     margin: (
-      top: 1.8cm,
-      bottom: 1.8cm,
-      left: 2cm,
-      right: 2cm,
+      top: 1.6cm,
+      bottom: 1.6cm,
+      left: 1.8cm,
+      right: 1.8cm,
     ),
   )
   set par(justify: true)
@@ -24,12 +24,12 @@
   // 更换字体：
   set text(font: ("Noto Serif", "Noto Serif CJK SC"))
   // 更改字体大小：
-  set text(size: 10pt)
+  set text(size: 9.1pt)
   // 设置列表样式（更靠左、圆点更大）
-  set list(indent: 6pt, body-indent: 8pt, marker: text(size: 1.8em)[•])
+  set list(indent: 5.5pt, body-indent: 8pt, marker: text(size: 1.8em)[•])
   set enum(indent: 6pt, body-indent: 8pt)
   // 设置行间距
-  set par(leading: 0.5em)
+  set par(leading: 0.41em)
 
   body
 }
@@ -143,7 +143,7 @@
     // set text(style:"italic")
     set text(size: 1.05em)
     strong(name)
-    h(0.8em)
+    h(0.7em)
     strong(type)
   }
   linebreak()
