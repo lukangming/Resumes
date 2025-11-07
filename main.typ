@@ -17,17 +17,17 @@
   date: "2022 年 - 2026 年",
 )[
   - GPA:3.3(5.0)，年级前 20%，CET-4
-  - 核心课程：操作系统、数字逻辑电路、数据结构、计算机组成原理等
+  - 核心课程：操作系统、数字逻辑电路、数据结构、计算机组成原理，算法设计分析，高等数学等
 ]
 == 专业技能
 #line()
 #set list(indent: 6pt, body-indent: 2pt)
-- #strong("语言与框架")：熟练 #strong("C++")（#strong("智能指针、设计模式、多态、多线程、GUI")），掌握 #strong("Qt") 框架开发；熟悉 #strong("Python")，自动化脚本及嵌入式设备交互。
-- #strong("基础与嵌入式")：掌握 #strong("计算机网络")（#strong("HTTP/HTTPS、TCP/UDP")）、#strong("操作系统")（#strong("进程线程、内存管理")）、#strong("嵌入式 MCU")（#strong("STM32 等")）开发、#strong("UART/RS-485") 外设控制与硬件调试。
-- #strong("通信与协议")：熟悉 #strong("ModBus、RS-485、CAN") 等工业通信协议，熟悉 #strong("MobaXterm") 串口调试工具，具备上位机与硬件设备实时数据交互经验。
-- #strong("数据库与数据管理")：熟悉 #strong("MySQL、SQLite") 的使用与优化，理解 #strong("索引、事务、锁机制")；具备数据库设计、查询优化与数据可视化经验。
+- #strong("语言与框架")：熟练 #strong("C++")（#strong("智能指针、设计模式、多态、多线程、GUI")），掌握 #strong("Qt") 框架开发；掌握 #strong("Python")，用于自动化脚本、数据处理及嵌入式交互；具备 #strong("ROS Noetic") 节点开发经验，熟悉话题、服务、tf及RViz可视化。
+- #strong("基础与嵌入式")：掌握 #strong("计算机网络")（#strong("HTTP/HTTPS、TCP/UDP")）、#strong("操作系统")（#strong("进程线程、内存管理")）、#strong("嵌入式 MCU")（#strong("STM32")）开发及 #strong("UART/RS-485") 外设调试。
+- #strong("通信与协议")：熟悉 #strong("ModBus、RS-485、CAN") 等工业通信协议，具备上位机与硬件实时交互经验，熟练使用 #strong("MobaXterm") 串口调试工具。
+- #strong("数据库与数据管理")：熟悉 #strong("MySQL、SQLite")，理解 #strong("索引、事务、锁机制")；具备数据采集、历史查询与可视化经验。
 - #strong("工具与开发环境")：熟悉 #strong("Linux") 开发与调试，#strong("Shell、CMake/QMake") 构建与 #strong("Git") 协作；常用 AI 编程辅助工具。
-- #strong("软硬件结合能力")：具备软硬件协同开发经验，包括软件与嵌入式设备通信、协议调试、数据采集与控制逻辑优化。
+- #strong("软硬件协同能力")：具备软硬件联合开发经验，包括上位机与嵌入式通信、协议调试、数据采集与控制逻辑优化；在 #strong("ROS + STM32F4 + FreeRTOS") 项目中实现路径规划、传感器融合及实时控制闭环。
 // + *粗体*#strong("示例")
 // + _emphasis show case_
 // + 数学模式： $x : sigma in Gamma => Gamma tack x : sigma$
@@ -36,17 +36,20 @@
 #experience(
   name: "罗格朗智能电气",
   type: "软件开发实习生",
-  date: "2025.4 —— 至今",
+  date: "2025.04 —— 至今",
 )[
-  开发与维护产线测试软件(MVP3/数据模拟/母线测试)，跨 Windows/Linux，对接 STM32；统一日志/用户/权限模块采用工厂+单例+虚继承封装，可插拔到任意新品。
-  - #strong("MVP3测试软件")：通过#strong("串口/CAN/ModBus") 通信，调 #strong("Python") 脚本完成测试-打印-烧录一体，实现 0 漏测。
-  - #strong("数据模拟批量发送工具")：1w行手码，#strong("零拷贝环形缓冲+无锁队列") 批量压缩 #strong("JSON")、#strong("UDP 8w pkt/s") 并发、#strong("SQLite WAL") 批量落库、#strong("QSettings") 热加载、#strong("QtXlsx") 流式导出，回环 &lt; 20ms，省1台陪测机。
-  - #strong("母线测试")：修复闪退、扩展 6 款新品，测试时长减半。
-  - #strong("加密软件")：调用 #strong("OpenSSL") 实现 #strong("SHA-256 + AES-256-CBC") License 保护，令牌绑定 #strong("MAC/主板序列号/TPM")；#strong("Qt") 界面可读写许可证，修改后重签名生效，未授权 PC 拒绝运行。
-  - #strong("统一基础设施")：#strong("Logger/User/Config") 三大抽象，#strong("工厂+单例+虚接口") 继承，新模块 1 行注册即可接入。
-  - #strong("移植优化")：引入 #strong("智能指针与异常捕获")，扫空内存泄漏，协议栈 RAM 压缩 20%。
-  - #strong("规范协作")：推行 #strong("代码评审、版本控制")，完成 #strong("Qt5/6") 双适配，独立交付模块。
+  负责产线测试系统 (MVP3 / 数据模拟 / 母线测试) 的开发与维护，跨 Windows / Linux 平台，对接 STM32 设备。
+  构建统一的日志、用户、权限模块，基于 #strong("工厂 + 单例 + 虚继承") 封装，实现组件可插拔与快速复用。
+
+  - #strong("MVP3测试软件")：通过 #strong("串口 / CAN / ModBus") 通信调用 #strong("Python") 脚本，实现测试-打印-烧录一体化流程，确保 0 漏测率。
+  - #strong("数据模拟与批量发送工具")：独立编写 1 万行代码，构建 #strong("零拷贝环形缓冲 + 无锁队列") 架构，实现 #strong("UDP 8w pkt/s") 并发与 #strong("SQLite WAL") 批量落库；回环延迟 < 20 ms，节省 1 台陪测机。
+  - #strong("母线测试软件")：修复闪退问题并支持多款新品，测试周期缩短约 50%。
+  - #strong("加密授权系统")：集成 #strong("OpenSSL") 实现 #strong("SHA-256 + AES-256-CBC") License 机制，绑定 #strong("MAC / 主板序列号 / TPM")；Qt GUI 支持许可证读写与自动重签名，防止未授权运行。
+  - #strong("基础设施模块化")：设计通用 #strong("Logger / User / Config") 框架，新模块一行注册即可接入。
+  - #strong("移植与稳定性优化")：引入 #strong("智能指针 / 异常捕获")，清除内存泄漏，协议栈 RAM 占用降低 20%。
+  - #strong("团队协作")：推动 #strong("代码评审、版本控制") 流程，完成 #strong("Qt5 / Qt6") 双版本兼容与独立模块交付。
 ]
+
 // #experience(
 //   name: "罗格朗智能电气有限公司",
 //   type: "软件开发实习生",
@@ -67,27 +70,60 @@
   type: "实习公司项目",
   date: "2025.9 —— 2025.11",
 )[
-  用 C++/Qt5 落地“模板确认→扫码→规则校验→入库→打印”全闭环，替掉人工，上线至今连续运行 0 宕机。
-  - #strong("离线优先")：SQLite+自定义 WAL 轮换，页级锁降级为行级；DAO 模板元编程，事务自动回滚/重试，掉电 100% 自恢复。
-  - #strong("并发架构")：三级线程池(QThreadPool)→扫码/校验/打印隔离；无锁环形队列(moodycamel) 100 k 槽位，QMutex 仅用于临界统计，8000 扫码/秒毛刺 &lt;2 ms。
-  - #strong("打印引擎")：BarTender COM 二次封装，VARIANT 参数缓存池复用；打印线程双缓冲+ QWaitCondition，200 标签/分钟连续输出，卡纸重打自动插队。
-  - #strong("数据同步")：断网写 SQLite，联网用 #strong("HTTP 表单 + 简单哈希去重") 批量上传，1 GB 数据 30 s 内对账；支持断点续传、CRC 校验与 3 次重试。
-  - #strong("异常防护")：Qt 信号槽集中异常捕获+QLoggingCategory 分级；堆栈回溯+行号写进 rotate 日志，30 天压缩留存，定位平均 3 min。
-  - #strong("中英双语")：Qt Linguist 提取全部 tr() 文本，运行时 QLocale 动态切换；内置 en.ts/zh.ts 双资源，海外工厂一键切换，日期/数字遵循 ICU 区域格式。
+  用 C++/Qt5 落地"模板确认→扫码→规则校验→入库→打印"全闭环，替掉人工，上线至今连续运行 0 宕机。
+  - #strong("数据层设计")：SQLite + Qt SQL，设计 BasicSql 基类封装 CRUD，子类继承实现业务表；RAII 事务辅助类自动提交/回滚；参数化查询防止 SQL 注入。
+  - #strong("模板化封装")：实现 SqlBasic<T> 模板类，通过虚函数多态映射查询结果，减少重复代码。
+  - #strong("异步架构")：HTTP 服务器使用 QThreadPool 管理请求；打印任务独立 QThread 异步执行，信号槽通信避免 UI 阻塞。
+  - #strong("业务控制")：状态机管理扫码流程（working/scanningMode/activePage）；QSet 去重防止重复扫码；规则校验失败自动回退。
+  - #strong("网络通信")：HTTP POST 调用 BarTender 集成接口，封装超时检测和自动重试机制；断网写 SQLite，联网批量上传。
+  - #strong("国际化")：Qt Linguist 提取 tr() 文本，QTranslator 运行时切换，内置 en.ts/zh.ts 双语资源。
 ]
+
 #experience(
-  name: "STM32机甲小车",
-  type: "个人项目",
-  date: "2025.06 —— 2025.07",
+  name: "ROS 上位机 + STM32机甲小车项目",
+  type: "独立开发",
+  date: "2025.6 —— 2025.8",
 )[
-  基于STM32F407+HAL库+FreeRTOS，实现自主避障、蓝牙遥控、语音交互、环境感知的智能小车。
-  - #strong("毫米级无级调速")：建立0-1000级PWM占空比-速度线性映射表；TB6612四路同步驱动，空载稳速误差≤1%。
-  - #strong("快速避障决策")：融合HC-SR04超声波+状态机，50 cm触发后整体响应&lt;800 ms，检测误差≤3 cm。
-  - #strong("环境感知与自动控制")：ADC采样光敏电阻&DHT11，OLED实时刷新；光照阈值1.5 V自动开关LED，迟滞0.1 V防抖动。
-  - #strong("低延迟通信")：USART3 115200 bps+cJSON，手机指令&lt;50 ms解析并执行8种动作。
-  - #strong("离线语音交互")：SU-03T模块离线识别10关键词，端到端延迟&lt;500 ms，实现开灯/关灯/查询温湿度对话。
-  - #strong("RTOS架构")：FreeRTOS任务优先级+消息队列管理电机、传感器、通信，保证实时性与可扩展性。
+  基于 C++/Qt 的 ROS 上位机与 STM32 下位机结合的小车控制系统，展示软硬件综合能力。
+
+  - #strong("路径规划与避障")：使用 #strong("C++") 实现 #strong("A*算法") 规划二维网格最短路径，并在 STM32 下位机模拟基础避障逻辑。
+  - #strong("ROS通信")：上位机 Qt GUI 节点发布 `/cmd_vel` 指令，下位机节点订阅执行，实现闭环控制和状态反馈。
+  - #strong("数据记录与查询")：使用 #strong("SQLite/CSV") 存储小车状态和路径信息，支持简单历史数据查询和调试。
+  - #strong("环境可视化")：在 Qt 界面嵌入 #strong("RViz") 显示小车位姿、规划路径及障碍物，支持键盘/手柄控制。
+  - #strong("下位机控制")：STM32F407 + HAL + FreeRTOS 实现蓝牙遥控、光照感知及 OLED 显示，模拟自主避障逻辑。
+  - #strong("模块化设计")：上位机与下位机功能模块独立，便于扩展和调试。
 ]
+
+
+
+// #experience(
+//   name: "ROS 智能小车上位机控制系统",
+//   type: "个人项目",
+//   date: "2025.06 —— 2025.08",
+// )[
+//   基于 #strong("ROS Noetic + STM32F407 + FreeRTOS") 的分布式智能小车系统。上位机运行于 #strong("Ubuntu/树莓派4B")，负责路径规划、感知融合与任务调度；STM32 作为下位机节点执行底层控制，通过 #strong("rosserial") 串口与 ROS 主机通信。
+
+//   - #strong("系统架构")：采用 ROS 节点模型设计，发布/订阅 `/cmd_vel`、`/sensor_data`、`/log_info` 话题，实现运动控制与状态反馈闭环。
+//   - #strong("路径规划与避障")：基于 #strong("A* + move_base") 实现局部避障与全局路径规划，RViz 可视化轨迹与障碍区。
+//   - #strong("传感器融合")：融合 STM32 上传的超声波、光敏、电机编码器数据，发布 `/odom`，通过 #strong("tf") 框架实现坐标系变换。
+//   - #strong("环境可视化")：RViz 实时显示小车位姿、障碍物与环境信息，支持键盘/蓝牙手柄远程控制。
+//   - #strong("通信优化")：自定义 ROS 串口协议帧格式，回环延迟 < 100 ms，通信完整率 > 99%。
+//   - #strong("系统分层")：上位机（ROS层）负责感知与规划，下位机（STM32层）负责执行与反馈，模块解耦、可扩展性强。
+// ]
+
+// #experience(
+//   name: "STM32机甲小车",
+//   type: "个人项目",
+//   date: "2025.06 —— 2025.08",
+// )[
+//   基于STM32F407+HAL库+FreeRTOS，实现自主避障、蓝牙遥控、语音交互、环境感知的智能小车。
+//   - #strong("毫米级无级调速")：建立0-1000级PWM占空比-速度线性映射表；TB6612四路同步驱动，空载稳速误差≤1%。
+//   - #strong("快速避障决策")：融合HC-SR04超声波+状态机，50 cm触发后整体响应&lt;800 ms，检测误差≤3 cm。
+//   - #strong("环境感知与自动控制")：ADC采样光敏电阻&DHT11，OLED实时刷新；光照阈值1.5 V自动开关LED，迟滞0.1 V防抖动。
+//   - #strong("低延迟通信")：USART3 115200 bps+cJSON，手机指令&lt;50 ms解析并执行8种动作。
+//   - #strong("离线语音交互")：SU-03T模块离线识别10关键词，端到端延迟&lt;500 ms，实现开灯/关灯/查询温湿度对话。
+//   - #strong("RTOS架构")：FreeRTOS任务优先级+消息队列管理电机、传感器、通信，保证实时性与可扩展性。
+// ]
 
 // #experience(
 //   name: "许可证管理与加密系统",
@@ -181,7 +217,7 @@
 
 == 荣誉奖项
 #line()
-获得过 CCPC中国大学生程序设计竞赛(广州)铜奖，_ACM-ICPC_国际大学生程序设计竞赛(杭州)优胜奖，程序设计竞赛天梯赛、睿抗机器人开发者大赛国家二等奖，蓝桥杯C/C++国家三等奖。
+获得过 CCPC中国大学生程序设计竞赛(广州)铜奖，程序设计竞赛天梯赛、睿抗机器人开发者大赛国家二等奖，蓝桥杯C/C++国家三等奖，_ACM-ICPC_国际大学生程序设计竞赛(杭州)优胜奖。
 // #prize(
 //   [比赛名称],
 //   grade: "奖项",
