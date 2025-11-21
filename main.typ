@@ -34,17 +34,17 @@
 == 工作经历
 #line()
 #experience(
-  name: "罗格朗智能电气",
+  name: "罗格朗智能电气(惠州)有限公司",
   type: "软件开发实习生",
   date: "2025.04 —— 至今",
 )[
-  负责产线测试系统 (MVP3 / 数据模拟 / 母线测试) 的开发与维护，跨 Windows / Linux 平台，对接 STM32 设备。
+  负责产线测试系统 (MVP3 / 数据模拟 / 母线测试) 的开发与维护，跨 Windows / Linux 平台，对接 产品 设备。
   构建统一的日志、用户、权限模块，基于 #strong("工厂 + 单例 + 虚继承") 封装，实现组件可插拔与快速复用。
 
-  - #strong("MVP3测试软件")：通过 #strong("串口 / CAN / ModBus") 通信调用 #strong("Python") 脚本，实现测试-打印-烧录一体化流程，确保 0 漏测率。
+  - #strong("MVP3测试软件")：通过 #strong("串口 / CAN / ModBus") 通信和调用 #strong("Python") 脚本，实现测试-打印-烧录一体化流程，确保 0 漏测率。
   - #strong("数据模拟与批量发送工具")：独立编写 1 万行代码，构建 #strong("零拷贝环形缓冲 + 无锁队列") 架构，实现 #strong("UDP 8w pkt/s") 并发与 #strong("SQLite WAL") 批量落库；回环延迟 < 20 ms，节省 1 台陪测机。
   - #strong("母线测试软件")：修复闪退问题并支持多款新品，测试周期缩短约 50%。
-  - #strong("加密授权系统")：集成 #strong("OpenSSL") 实现 #strong("SHA-256 + AES-256-CBC") License 机制，绑定 #strong("MAC / 主板序列号 / TPM")；Qt GUI 支持许可证读写与自动重签名，防止未授权运行。
+  - #strong("加密授权系统")：集成 #strong("OpenSSL") 实现 #strong("SHA-256 + AES加密") License 机制，绑定 #strong("MAC / 主板序列号 / TPM")；Qt GUI 支持许可证读写与自动重签名，防止未授权运行。
   - #strong("基础设施模块化")：设计通用 #strong("Logger / User / Config") 框架，新模块一行注册即可接入。
   - #strong("移植与稳定性优化")：引入 #strong("智能指针 / 异常捕获")，清除内存泄漏，协议栈 RAM 占用降低 20%。
   - #strong("团队协作")：推动 #strong("代码评审、版本控制") 流程，完成 #strong("Qt5 / Qt6") 双版本兼容与独立模块交付。

@@ -29,7 +29,7 @@
   set list(indent: 5.4pt, body-indent: 8pt, marker: text(size: 1.65em)[•])
   set enum(indent: 6pt, body-indent: 8pt)
   // 设置行间距
-  set par(leading: 0.38em)
+  set par(leading: 0.35em)
 
   body
 }
